@@ -39,16 +39,6 @@ export default {
     },
     methods: {
         setJsonValue () {
-            // let me = this;
-            // let navDatas = SUB_NAV_DATA.filter((nav) => {
-            //     let activeTab = me.activeTab;
-            //     let actived = activeTab === nav.path || activeTab === nav.name;
-            //     return actived;
-            // });
-            // let subNavs = navDatas.map((item) => {
-            //     return item.children || [];
-            // });
-            // this.navs = subNavs[0] || [];
             let rs = SUB_NAV_DATA[this.activeTab];
             this.navs = rs && rs.data;
         }
@@ -59,17 +49,39 @@ export default {
 
 <style scoped >
     .silent-aside {
+        font-size: 14px;
         /*width:200px;*/
         /*height: 200px;*/
     }
     .silent-aside-nav-item {
+
     }
+
     .silent-aside-nav-item:hover,
     .silent-aside-nav-item.active {
     }
 
-    .silent-aside-nav-item:hover .silent-aside-nav-item-link,
+    .silent-aside-nav-item-link {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 15px;
+
+    }
+
+    .silent-aside-nav-item:hover{
+        background: rgba(0, 0, 0, .8);
+    }
+    .silent-aside-nav-item:hover .silent-aside-nav-item-link {
+        color: #fff;
+    }
+
+    /*.silent-aside-nav-item:hover .silent-aside-nav-item-link,*/
     .router-link-active{
+        background:#000;
+        color: #fff;
     }
 
 </style>
